@@ -1,0 +1,37 @@
+<div id="fooManager">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Foo
+            <span ng-show="vm.IsNew" class="badge pull-right">Nuevo</span>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-sm-1 text-right">Nombre</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="name" placeholder="Nombre" ng-model="vm.Name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-1 text-right">Estado</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="status" placeholder="Status" ng-model="vm.Status" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="well well-sm clearfix">
+        <div class="pull-left">
+            <button ng-show="!vm.IsNew" class="btn btn-default" ng-click="vm.Retrieve('previous')">< Anterior</button>
+            <button class="btn btn-default" ng-click="vm.Retrieve('first')">Primero</button>
+            <button ng-show="!vm.IsNew" class="btn btn-default" ng-click="vm.Retrieve('next')">Siguiente ></button>
+        </div>
+        <div class="pull-right">
+            <button ng-show="!vm.IsNew" class="btn btn-success" ng-click="vm.New()">Nuevo</button>
+            <button class="btn btn-primary" ng-click="vm.Save()">Guardar datos</button>
+            <button ng-show="!vm.IsNew" class="btn btn-danger" ng-click="vm.Delete()">Eliminar</button>
+        </div>
+    </div>
+    <message-modal modal-id="msgWindow" message-status="vm.MessageStatus" message="vm.Message" />
+</div>

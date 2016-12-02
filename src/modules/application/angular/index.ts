@@ -1,7 +1,13 @@
 import "angular";
+import "bootstrap";
 
-import {StarComponent} from "./components/star/StarComponent";
-import {TwitterApplicationComponent} from "./components/twitterApplication/TwitterApplicationComponent";
+import { IndexController } from "./controllers/IndexController";
+import { FooManagerDirective, FooManagerController } from "./directives/fooManager/FooManagerDirective";
+import { MessageModalDirective, MessageModalController } from "./directives/messageModal/MessageModalDirective";
+
 angular.module("app.application", [])
-    .component("twitterApplication", new TwitterApplicationComponent())
-    .component("star",  new StarComponent());
+    .controller("IndexController", IndexController)
+    .directive("fooManager", FooManagerDirective.Factory())
+    .controller("FooManagerController", FooManagerController)
+    .directive("messageModal", MessageModalDirective.Factory())
+    .controller("MessageModalController", MessageModalController);

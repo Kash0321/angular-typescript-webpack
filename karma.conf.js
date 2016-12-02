@@ -36,6 +36,7 @@ module.exports = function (config) {
         },
         webpack: webpackConfig,
         reporters: [
+            'kjhtml',
             'dots',
             'spec',
             'coverage'
